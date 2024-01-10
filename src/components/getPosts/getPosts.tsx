@@ -26,7 +26,7 @@ const GetPosts = () => {
                         item={p}
                     />
                 })
-            : <h1 className={s['getUsers-error']}>No users</h1>}
+            : <h1 className={s['getUsers-error']}>No Posts</h1>}
         </div>
     )
 }
