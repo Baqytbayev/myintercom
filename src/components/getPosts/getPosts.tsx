@@ -3,6 +3,7 @@ import s from './getPosts.module.css'
 import { AppDispatch, AppState } from '../../store/store'
 import { useEffect } from 'react'
 import { getPostsById } from '../../store/postsSlice'
+import OnePost from './onePost/onePost'
 
 
 const GetPosts = () => {
@@ -14,7 +15,14 @@ const GetPosts = () => {
     console.log(posts)
     return (
         <div>
-            Hello
+            {posts.length ? 
+                posts.map(p => {
+                    return <OnePost
+                        key={p.id}
+                        item={p}
+                    />
+                })
+            : <h1>No users</h1>}
         </div>
     )
 }
