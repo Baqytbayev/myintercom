@@ -10,3 +10,31 @@
     color: #ff0000;
     margin: 20px auto;
 }
+
+
+.active {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+}
+
+.getUsers-pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.getUsers-pagination button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.getUsers-pagination button:hover {
+    background-color: rgb(189, 140, 140);
+    transform: scale(1.15);
+}
