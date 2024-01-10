@@ -6,7 +6,8 @@ import { useDispatch } from "react-redux"
 const makeStore = () => {
     return configureStore({
         reducer: {
-            users: postsSlice.reducer
+            users: postsSlice.reducer,
+            posts: postsSlice.reducer
         }
     })
 }

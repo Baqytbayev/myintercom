@@ -1,12 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import GetUsers from './components/getUsers/getUsers';
+import GetPosts from './components/getPosts/getPosts';
 
 const App = () => {
   return (
     <div className="App">
-      <GetUsers/>
+      {/* <GetUsers/> */}
+      <GetPosts/>
     </div>
   );
 }
