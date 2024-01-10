@@ -4,17 +4,21 @@ import { AppDispatch, AppState } from '../../store/store'
 import { useEffect } from 'react'
 import { getPostsById } from '../../store/postsSlice'
 import OnePost from './onePost/onePost'
+import { useParams } from 'react-router-dom'
 
 
 const GetPosts = () => {
     const posts = useSelector((state: AppState) => state.users.posts, shallowEqual)
     const dispatch: AppDispatch = useDispatch()
+    const params = useParams()
     useEffect(() => {
-        dispatch(getPostsById(1))
+        const id = params.id ? parseInt(params.id, 10) : undefined;
+        if (typeof id === 'number') {
+        dispatch(getPostsById(id));
+}
     }, [dispatch])
-    console.log(posts)
     return (
-        <div>
+        <div className={s['getUsers']}>
             {posts.length ? 
                 posts.map(p => {
                     return <OnePost
@@ -22,7 +26,7 @@ const GetPosts = () => {
                         item={p}
                     />
                 })
-            : <h1>No users</h1>}
+            : <h1 className={s['getUsers-error']}>No users</h1>}
         </div>
     )
 }

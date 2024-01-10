@@ -11,9 +11,8 @@ const GetUsers = () => {
     useEffect(() => {
         dispatch(getUsers())
     }, [dispatch])
-    console.log(users)
     return (
-        <div>
+        <div >
             {users.length ? 
                 users.map(p => {
                     return <OneUser 
@@ -21,7 +20,7 @@ const GetUsers = () => {
                         item={p}
                     />
                 })
-            : <h1>No users</h1>}
+            : <h1 className={s['getUsers-error']}>No users</h1>}
         </div>
     )
 }
